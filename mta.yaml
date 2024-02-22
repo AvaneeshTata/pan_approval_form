@@ -11,7 +11,7 @@ modules:
       - name: cross-container-service-2
       - name: TLP_Connectivity
       - name: pan_approval_form-destination
-      - name: pan_approval_form-db
+      # - name: pan_approval_form-db
     provides:
       - name: srv-api
         properties:
@@ -73,7 +73,7 @@ modules:
         properties:
           key: ServiceName_1
           service: ~{the-service-name}
-      - name: pan_approval_form-db
+      # - name: pan_approval_form-db
     parameters:
       buildpack: nodejs_buildpack
   - name: panapproval
