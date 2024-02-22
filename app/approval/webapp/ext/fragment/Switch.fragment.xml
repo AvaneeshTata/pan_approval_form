@@ -1,3 +1,0 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m">
-	<Switch id="_IDGenButton1" core:require="{ handler: 'approval/ext/fragment/Switch'}" state="{Notification_Status}" change="handler.onPress" type="AcceptReject" enabled="false" />
-</core:FragmentDefinition>

@@ -1,1 +1,0 @@
-sap.ui.define(["sap/ui/core/mvc/ControllerExtension"],function(e){"use strict";return e.extend("approval.ext.controller.PanDetailsList",{override:{onInit:function(){debugger;var e=this.base.getExtensionAPI().getModel()}}})});
