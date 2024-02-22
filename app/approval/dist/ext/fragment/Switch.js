@@ -1,0 +1,1 @@
+sap.ui.define(["sap/m/MessageToast"],function(e){"use strict";return{onInit:function(n){debugger;e.show("Switch has been triggered.")}}});

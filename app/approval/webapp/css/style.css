@@ -1,0 +1,52 @@
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:reject-inner{
+    background-color: brown;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:approve-inner{
+    background-color: green;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:approve-BDI-content{
+    color: white;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:reject-BDI-content{
+    color:white;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:needforclarification-inner{
+    background-color: orange;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FooterBar\:\:CustomAction\:\:needforclarification-BDI-content{
+    color:white;
+}
+#approval\:\:tab1List--fe\:\:table\:\:tab1\:\:LineItem-toolbar{
+    display: none;
+}
+#approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1totab2\:\:LineItem\:\:_-toolbar{
+    display: none;
+}
+#approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1topdf\:\:LineItem\:\:ATTACHMENTSINTERNALTOPANFORAPPROVERS-toolbar,
+#approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1tovendor_data\:\:LineItem\:\:VendorData-toolbar{
+    display: none;
+}
+/* #approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1topdf\:\:LineItem\:\:ATTACHMENTSINTERNALTOPANFORAPPROVERS-toolbar{
+    display: none;
+} */
+#approval\:\:tab1_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-toolbar,
+#approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1toWORKFLOW_HISTORY\:\:LineItem\:\:WORKFLOWHISTORY-toolbar{
+    display: none;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FormContainer\:\:ApprovalComments\:\:FormElement\:\:DataField\:\:Comments{
+    width: 300%;
+}
+.sapUiFormCLElement{
+    background-color: aliceblue;
+    margin-bottom: 1%;
+    border-radius: 10px;
+}
+#approval\:\:tab1ObjectPage--fe\:\:FormContainer\:\:ApprovalComments\:\:FormElement\:\:DataField\:\:Comments\:\:Field-edit{
+    height: 150px;
+    }
+    .sapUiTableHeaderDataCell.sapUiTableHeaderCellActive{
+        background-color: gainsboro;
+    }
+#approval\:\:tab1ObjectPage--fe\:\:table\:\:tab1totab3\:\:LineItem\:\:PANTYPE-toolbar{
+    display: none;
+}
