@@ -3,7 +3,6 @@
 # Web IDE, App Studio
 .che/
 .gen/
-core
 
 # MTA
 *_mta_build_tmp
