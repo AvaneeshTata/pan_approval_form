@@ -3,8 +3,6 @@
 # connection.properties
 # default-*.json
 .cdsrc-private.json
-gen/
-target/
 
 # Web IDE, App Studio
 .che/
