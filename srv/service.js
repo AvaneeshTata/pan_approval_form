@@ -22,38 +22,38 @@ this.on ("getcomments",async (req)=>{
 
 });
 this.on("validateUser",async (req)=>{debugger
-     let auth = req?.headers?.authorization;
+    //  let auth = req?.headers?.authorization;
         
-    if(auth != undefined){
-        let token = auth.split(" ");
-        var decoded = jwtDecode(token[1]);
-    }  
-    let wiid = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`;
-    console.log("beforevalidate");
-    let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
-//    let dummyRes = [{status : "User Found",user : "one"}];
+    // if(auth != undefined){
+    //     let token = auth.split(" ");
+    //     var decoded = jwtDecode(token[1]);
+    // }  
+    // let wiid = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`;
+    // console.log("beforevalidate");
+    // let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
+   let dummyRes = [{status : "User Found",user : "one"}];
 // console.log("validate");
 // console.log(dummyRes[0]);
     return JSON.stringify(dummyRes[0]);
 
 });
 this.on("filteredData",async (req)=>{debugger
-    let auth = req?.headers?.authorization;
+    // let auth = req?.headers?.authorization;
         
-    if(auth != undefined){
-        let token = auth.split(" ");
-        var decoded = jwtDecode(token[1]);
-    }  
+    // if(auth != undefined){
+    //     let token = auth.split(" ");
+    //     var decoded = jwtDecode(token[1]);
+    // }  
     // var decoded ="dhanushg-v@tataprojects.com"  
-    let url = `/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}' )`;
-    console.log(url);
-    let dummyRes = await AribaSrv.get(url);
-    console.log("dummyRes");
-    console.log(dummyRes);
-    console.log("dummyRes");
-// let dummyRes = [
-//     {user:"one",workitemId:"1"},{user:"two",workitemId:"2"}
-// ];  
+    // let url = `/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}' )`;
+    // console.log(url);
+    // let dummyRes = await AribaSrv.get(url);
+    // console.log("dummyRes");
+    // console.log(dummyRes);
+    // console.log("dummyRes");
+let dummyRes = [
+    {user:"one",workitemId:"1"},{user:"two",workitemId:"2"}
+];  
 let ret =[];
     let array = [];
     
