@@ -30,7 +30,8 @@ this.on("validateUser",async (req)=>{debugger
     }  
     let wiid = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`;
     console.log("beforevalidate");
-    let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
+    // let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
+    let dummyRes = await AribaSrv.get(`/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);//testing
 //    let dummyRes = [{status : "User Found",user : "one"}];
 // console.log("validate");
 // console.log(dummyRes[0]);
@@ -45,7 +46,8 @@ this.on("filteredData",async (req)=>{debugger
         var decoded = jwtDecode(token[1]);
     }  
     // var decoded ="dhanushg-v@tataprojects.com"  
-    let url = `/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}' )`;
+    // let url = `/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}' )`;
+    let url = `/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}' )`;//for testing
     console.log(url);
     let dummyRes = await AribaSrv.get(url);
     console.log("dummyRes");
@@ -325,7 +327,8 @@ let ret =[];
                 "json": JSON.stringify(data_m)
             }
             // let dummyRes = [];
-            let dummyRes = await AribaSrv.post('/sap/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet',body);
+            // let dummyRes = await AribaSrv.post('/sap/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet',body);
+            let dummyRes = await AribaSrv.post('/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet',body);//testing
             console.log(dummyRes);
             // https://vhtpds4dci.sap.tataprojects.com:20400/sap/sap/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet
             // console.log("resssssssssssssssssssssssssssssssssssssssssssssssssssss");

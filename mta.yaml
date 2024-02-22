@@ -60,23 +60,9 @@ modules:
     build-result: resources
     requires:
     - artifacts:
-      - approval.zip
-      name: approval
-      target-path: resources/
-    - artifacts:
       - panapproval.zip
       name: panapproval
       target-path: resources/
-- name: approval
-  type: html5
-  path: app/approval
-  build-parameters:
-    build-result: dist
-    builder: custom
-    commands:
-    - npm install
-    - npm run build:cf
-    supported-platforms: []
 - name: pan_approval_form-db-deployer
   type: hdb
   path: gen/db
