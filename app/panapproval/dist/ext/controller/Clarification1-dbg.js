@@ -79,7 +79,7 @@ sap.ui.define([
             //     }
             // });
             //
-        
+            oBusyDialog.close();
             var href_For_Product_display = await sap.ushell.Container.getServiceAsync("Navigation");
 										
 								href_For_Product_display.navigate({
@@ -88,7 +88,7 @@ sap.ui.define([
 
 
             // window.location.href = previousPageUrl;
-            oBusyDialog.close();
+            
             MessageToast.show("PAN Form has been requested for clarification.");
         }
     };
