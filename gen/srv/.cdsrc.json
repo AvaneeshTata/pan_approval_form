@@ -12,10 +12,10 @@
         "getcall":{
             "kind": "rest",
             "credentials": {
-                "url": "https://btp-dev-0or0hi20.it-cpi024-rt.cfapps.eu10-002.hana.ondemand.com",
+                "url": "https://tpl-cpi-a0qwl4l9.it-cpi021-rt.cfapps.in30.hana.ondemand.com",
                 "authentication":"BasicAuthentication",
-                "username":"sb-821cee47-920d-4de0-bec1-2e24ead64ddb!b291531|it-rt-btp-dev-0or0hi20!b182722",
-                "password":"b0b697de-3a91-4ec6-9cd9-cdc5f5852619$7a7M6p0EbnmzYp72doruaGpHvXAUvjHDLnArK2z64Hs=",
+                "username":"sb-0b97c40d-3f35-4404-9105-b46caad5f19b!b5206|it-rt-tpl-cpi-a0qwl4l9!b148",
+                "password":"72ffaf31-45ac-47d4-b110-8a9f6295bd6f$5He2sa_sIzuf9H_hcPXuTLu-u1QmWkLktwS00qvrz48=",
                 "headers":{
                   "url":"https://openapi.ariba.com/api/sourcing-approval/v2/prod/action",
                   "query":"",

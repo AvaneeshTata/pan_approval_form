@@ -311,6 +311,7 @@ entity PAN_PRICE_DETAILS{
   key Item_Code : String;
     HSN_OR_SAC_Code : String;
    
+   extendedPrice:String;
    Item_Short_Description : String;
    UOM : String;
    Quantity : String;

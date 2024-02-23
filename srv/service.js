@@ -420,7 +420,7 @@ let ret =[];
         ariba.destination.headers.query = "realm=tataprojects-T&user=" + "PANCreator" + "&passwordadapter=ThirdPartyUser&apikey=nQcLVavnQ7f2YklQoRtNeVgYFGyyqN4v" ;
           if(task_id[0].task_id){
             try{
-                console.log("avaneesh post");
+                // console.log("avaneesh post");
                 let res = await ariba.get("/http/postcallscript");
             }  catch (err){
                 console.log(err);
