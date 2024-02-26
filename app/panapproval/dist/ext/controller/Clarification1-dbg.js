@@ -13,7 +13,7 @@ sap.ui.define([
                     key = {key : key,status : "Justification Needed" ,urll : window.location.href };
                     key = JSON.stringify(key);
                     oFunction.setParameter("ID",key);
-                    await oFunction.execute();debugger
+                    await oFunction.execute(); 
                     let oContext1 = oFunction.getBoundContext();
 						let result1 = oContext1.getObject();
                             result1 = JSON.parse(result1.value);

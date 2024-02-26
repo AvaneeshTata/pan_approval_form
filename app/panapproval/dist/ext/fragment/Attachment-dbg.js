@@ -10,12 +10,12 @@ sap.ui.define([
 
     return {
         onPress: function(oEvent) {
-            debugger
+             
             MessageToast.show("Custom handler invoked.");
         },
 		onAfterItemAdded: function(oEvent) {
 			baseuri = oEvent.oSource.getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent().oContainer.getParent().getParent().getParent().getManifestObject()._oBaseUri._string;
-			debugger;
+			 ;
 			var item = oEvent.getParameter("item");
 			var id1 = oEvent.oSource.oPropagatedProperties.oModels.pageInternal.mContexts["/pages/panapproval::PAN_Details_APRObjectPage/relatedApps"].oModel.oData.currentCtxt.sPath;
 			var parentId = id1.match(/'([^']+)'/)[1];
@@ -52,7 +52,7 @@ sap.ui.define([
 		
 			_createEntity(item)
 				.then((id) => {
-					debugger
+					 
 					// var url = baseuri + `/odata/v4/pan-approval/PAN_attachments_APR(ID=${id},PAN_Number='${parentId}')/content`;
 					var url = `/odata/v4/pan-approval/PAN_attachments_APR(ID=${id},PAN_Number='${parentId}')/content`;
 					// var url = `/odata/v4/catalog/attachments(ID=${id},PAN_Number='${parentId}')/content`;
@@ -80,9 +80,9 @@ sap.ui.define([
 			},
 
 			onOpenPressed: function(oEvent) {
-				debugger;
+				 ;
 				oEvent.preventDefault();
-				debugger
+				 
 				var item = oEvent.getSource();
 				var fileName = item.getFileName();
 				var url111 = oEvent.getSource().getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent().getParent().oBindingContexts.undefined.oModel.sServiceUrl;

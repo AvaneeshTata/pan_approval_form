@@ -14,13 +14,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			
 			onInit: async function () {
 			
-				debugger
+				 
 				// sap.ui.getCore().byId('panapproval::PAN_Details_APRList--fe::FilterBar::PAN_Details_APR-btnSearch').firePress();
 				// // you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 				// var oModel = this.base.getExtensionAPI().getModel();
 				// var Name = 'filteredData';
 				// let oFunction = oModel.bindContext(`/${Name}(...)`);
-				// await oFunction.execute();debugger
+				// await oFunction.execute(); 
 				// let oContext1 = oFunction.getBoundContext();
 				// 	let result1 = oContext1.getObject();
 				// 		result1 = JSON.parse(result1.value);
@@ -30,7 +30,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				// var go_button = sap.ui.getCore().byId("panapproval::PAN_Details_APRList--fe::FilterBar::PAN_Details_APR-btnSearch");
 
 				// go_button.attachPress((oEvent) => {
-				// 	debugger
+				// 	 
 
 					
 					// sap.ui.getCore().byId("panapproval::PAN_Details_APRList--fe::FilterBar::PAN_Details_APR::FilterField::PAN_Number-inner").setTokens([PAN123]);
@@ -48,7 +48,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						// }
 					// }
 				
-					debugger
+					 
 					// sap.ui.getCore().byId('panapproval::PAN_Details_APRList--fe::table::PAN_Details_APR::LineItem').mAggregations._content.destroyRows();
 					// sap.ui.getCore().byId('panapproval::PAN_Details_APRList--fe::table::PAN_Details_APR::LineItem').mAggregations._content.addRow(nRows[0]);
 					
@@ -68,17 +68,17 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					//w// this.base.byId("panapproval::PAN_Details_APRList--fe::FilterBar::PAN_Details_APR").setFilterConditions(arr);
 					// this.base.byId("panapproval::PAN_Details_APRList--fe::FilterBar::PAN_Details_APR").getFilterConditions();
 					// console.log();
-					debugger
+					 
 				// })
 			},
 		
 			routing:{
 			
-				onAfterBinding:async function(oEvent){debugger
+				onAfterBinding:async function(oEvent){ 
 					var oModel = this.base.getExtensionAPI().getModel();
 					var Name = 'filteredData';
 							let oFunction = oModel.bindContext(`/${Name}(...)`);
-							await oFunction.execute();debugger
+							await oFunction.execute(); 
 							let oContext1 = oFunction.getBoundContext();
 								let result1 = oContext1.getObject();
 								var PAN_Number = JSON.parse(result1.value);
@@ -95,10 +95,10 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 
 					//  var frag4 = this.base.getView().getContent()[0]
-					//  frag4.attachSectionChange(function(){debugger
+					//  frag4.attachSectionChange(function(){ 
 					// 	 var section = this.getScrollingSectionId()
 					// 	 if (section == "project1::parentObjectPage--fe::FacetSection::table"){
-					// 		 debugger
+					// 		  
 					// 		 var val22 = sap.ui.getCore().byId('project1::parentObjectPage--fe::FacetSection::table').mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.getColumns()[1]	
 					// 		 var value232 = sap.ui.getCore().byId('project1::parentObjectPage--fe::FacetSection::table').mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations._content.mBindingInfos.items.binding.oCache.getValue()
 					// 		 const maxLength = Math.max(...value232.map(item => item.name.length));

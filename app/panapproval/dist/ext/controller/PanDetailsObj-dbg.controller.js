@@ -11,7 +11,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
              * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
              * @memberOf panapproval.ext.controller.PanDetailsObj
              */
-			onInit: function () {debugger
+			onInit: function () { 
 				// you can access the Fiori elements extensionAPI via this.base.getExtensionAPI
 				var oModel = this.base.getExtensionAPI().getModel();
 				// this.getView().setVisible(false);
@@ -19,18 +19,18 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				// this.getView().addContent();
 
 			},
-			onBeforeRendering:async function(){debugger
+			onBeforeRendering:async function(){ 
 				
 			},
-			onAfterRendering:async function(){debugger
+			onAfterRendering:async function(){ 
 				
 			},
 			routing :  {
 				
-				onBeforeBinding: async function(oBindingContext){debugger
+				onBeforeBinding: async function(oBindingContext){ 
 					this.getView().setVisible(false);
 					// let func = function(){
-					// 	debugger
+					// 	 
 					// }
 					var view = this.getView().getContent()[0].getSections()[2].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getItems()[1].setUploadEnabled(false);
 					// this.base.getExtensionAPI().getEditFlow().attachonAfterSave(func);
@@ -45,7 +45,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					   var Name = 'validateUser';
 							   let oFunction = oModel.bindContext(`/${Name}(...)`);
 							   oFunction.setParameter("ID",res1[1]);
-							   await oFunction.execute();debugger
+							   await oFunction.execute(); 
 							   let oContext1 = oFunction.getBoundContext();
 								   let result1 = oContext1.getObject();
 								   var validated = JSON.parse(result1.value);
@@ -55,7 +55,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						this.getView().setVisible(true);
 
 						var frag4 = this.base.getView().getContent()[0]
-						function resize(id) {debugger
+						function resize(id) { 
 						let subCol = sap.ui.getCore().byId(id).mAggregations.content.getContent().mAggregations.columns;
 					subCol.forEach(col =>{
 						let colName = col.mProperties.dataProperty;
@@ -71,14 +71,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								});	
 					}
 					
-						frag4.attachSectionChange(function(){debugger
+						frag4.attachSectionChange(function(){ 
 							var section = this.getScrollingSectionId()
 							if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
 								resize("__block1");
 								resize("__block2");
 							};
 
-								debugger
+								 
 								var columns = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns;
 								if(columns != undefined )
 								columns.forEach(col =>{
@@ -99,14 +99,14 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						var baseUrl = this.base.getAppComponent().getManifestObject()._oBaseUri._string;
 						await $.ajax({
 						 url:baseUrl+ `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}`,
-						 success: function(result) {debugger
+						 success: function(result) { 
 							 that.getView().getContent()[0].getFooter().setVisible(true);
 							 if(result.status == 'Approved' ||result.status == 'Rejected'||result.status == 'Justification Needed')
 							 that.getView().getContent()[0].getFooter().setVisible(false);
 							 
 							 
 						 },
-						 error: function(xhr, status, error) {debugger
+						 error: function(xhr, status, error) { 
 							 // Handle errors if any
 							 console.error(error);
 						 }
@@ -207,7 +207,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					   }))
 					   ButtonHbox.addItem(new sap.m.Button({
 						 text:"Comment History",
-						 press:async function(oEvent) {debugger
+						 press:async function(oEvent) { 
 							 function generateUniqueId() {
 								 // Generate a random number
 								 var randomNumber = Math.floor(Math.random() * 1000000);
@@ -225,7 +225,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 									 title:"Approval Comments",
 									 endButton: new sap.m.Button({
 										 text: "Close",
-										 press:async function () {debugger
+										 press:async function () { 
 											 cdialog.close();
 										 },
 								 layoutData: new sap.m.FlexItemData({ // Add layoutData for flexible item behavior
@@ -294,7 +294,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								 });
 								 cdialog.getContent()[0].destroyItems();
 								 for (let i = 0; i < data.length; i++) {
-									 debugger
+									  
 									 // var currentDate = new Date();
 									 // var currentDateTime = currentDate.toISOString();
 									 var oTimelineItem = new sap.suite.ui.commons.TimelineItem({
@@ -358,7 +358,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 							 type: "AcceptReject",
 							 state : levelArray[0].Notification_Status === 'true',
 							 change: function(oEvent){
-								 debugger;
+								  ;
 							 }
 						 }));
  
@@ -429,7 +429,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				}
 				},
 				onAfterBinding : function(oBindingContext) {
-					debugger
+					 
 					var pan_numb = oBindingContext.oBinding.sPath;
 					const pattern = /'([^']+)'/;
 					const matches = pan_numb.match(pattern);

@@ -21,7 +21,7 @@ this.on ("getcomments",async (req)=>{
     return JSON.stringify(data);
 
 });
-this.on("validateUser",async (req)=>{debugger
+this.on("validateUser",async (req)=>{ 
      let auth = req?.headers?.authorization;
         
     if(auth != undefined){
@@ -38,7 +38,7 @@ this.on("validateUser",async (req)=>{debugger
     return JSON.stringify(dummyRes[0]);
 
 });
-this.on("filteredData",async (req)=>{debugger
+this.on("filteredData",async (req)=>{ 
     let auth = req?.headers?.authorization;
         
     if(auth != undefined){
@@ -186,7 +186,7 @@ let ret =[];
     // }
     // // return req;
     // });
-//     this.on('sendforapproval',async(req)=>{debugger
+//     this.on('sendforapproval',async(req)=>{ 
 //         console.log(req.data);
 //         let data = JSON.parse(req.data.data);
 //         // req._.odataRes.setHeader("Access-Control-Allow-Origin",'*');
@@ -265,7 +265,7 @@ let ret =[];
 //     });
 
 
-    this.on('getuser',async (req)=>{debugger
+    this.on('getuser',async (req)=>{ 
         let auth = req?.headers?.authorization;
         
         if(auth != undefined){
@@ -517,7 +517,7 @@ let ret =[];
 
             return JSON.stringify(ret);
     });
-//     this.on('Comments' ,async (req) => {debugger
+//     this.on('Comments' ,async (req) => { 
         
 //         let auth = req?.headers?.authorization;
         
@@ -592,7 +592,7 @@ let ret =[];
         
     // });
 
-    // this.before('READ', tab2, async (req) => {debugger
+    // this.before('READ', tab2, async (req) => { 
     //     try {
     //         resp = await c5re.get('/tab2');
     //         const data = resp.value;
@@ -604,7 +604,7 @@ let ret =[];
     //         req.error(500, err.message);
     //     }
     // });
-    // this.before('READ', vendor_data, async (req) => {debugger
+    // this.before('READ', vendor_data, async (req) => { 
     //     try {
     //         resp = await c5re.get('/vendor_data');
     //         const data = resp.value;
@@ -635,7 +635,7 @@ let ret =[];
     // }
        
     // });
-    // this.before('READ', Fvendor_responseoo, async (req) => {debugger
+    // this.before('READ', Fvendor_responseoo, async (req) => { 
     //     try {
     //         resp = await c5re.get('/Fvendor_responseoo');
     //         const data = resp.value;
@@ -647,7 +647,7 @@ let ret =[];
     //         req.error(500, err.message);
     //     }
     // });
-    // this.before('READ', PAYMENT_TERM_DETAILS, async (req) => {debugger
+    // this.before('READ', PAYMENT_TERM_DETAILS, async (req) => { 
     //     try {
     //         resp = await c5re.get('/PAYMENT_TERM_DETAILS');
     //         const data = resp.value;
@@ -659,7 +659,7 @@ let ret =[];
     //         req.error(500, err.message);
     //     }
     // });
-    // this.before('READ', WORKFLOW_HISTORY, async (req) => {debugger
+    // this.before('READ', WORKFLOW_HISTORY, async (req) => { 
     //     try {
     //         resp = await c5re.get('/WORKFLOW_HISTORY');
     //         const data = resp.value;
@@ -671,7 +671,7 @@ let ret =[];
     //         req.error(500, err.message);
     //     }
     // });
-    // this.before('READ', WORKFLOW_HISTORY_EMP, async (req) => {debugger
+    // this.before('READ', WORKFLOW_HISTORY_EMP, async (req) => { 
     //     try {
     //         resp = await c5re.get('/WORKFLOW_HISTORY_EMP');
     //         const data = resp.value;
@@ -684,7 +684,7 @@ let ret =[];
     //     }
     // });
     // this.on('getPdfUrl', async (req) => {
-    //     debugger
+    //      
     //     console.log(re1.params);
     //     const fileLinkValue = req.params;
     //     return fileLinkValue;
@@ -695,7 +695,7 @@ let ret =[];
     //     return data[0].Employee_ID;
     // });
 
-    // this.before('READ', attachments, async (req) => {debugger
+    // this.before('READ', attachments, async (req) => { 
     //     try {
     //         // req.params.id[0];
     //         const a =await SELECT.from(attachments);
@@ -713,7 +713,7 @@ let ret =[];
 
 
     // this.before('CREATE', 'attachments',async (req) => {
-    //     debugger
+    //      
     //     // console.log('Create called')
     //     // console.log(JSON.stringify(req.data))
     //     req.data.url = `/media/attachments(${req.data.ID})/content`;
@@ -840,7 +840,7 @@ let ret =[];
  
 
     this.before('CREATE', 'PAN_attachments_APR', req => {
-        debugger
+         
         console.log('Create called')
         console.log(JSON.stringify(req.data))
         // req.data.fileName = req.data.ID
@@ -851,12 +851,12 @@ let ret =[];
     })
 
     this.after('CREATE','PAN_attachments_APR',req => {
-        debugger
+         
         console.log(req);
     })
 
     this.before('READ', 'PAN_attachments_APR', async req => {
-        debugger
+         
         
       
 

@@ -5,7 +5,7 @@ sap.ui.define([
     'use strict';
     var oBusyDialog=new sap.m.BusyDialog();
     return {
-        Approve:async function(oEvent) {debugger
+        Approve:async function(oEvent) { 
             oBusyDialog.open();
             // var baseUrl = oEvent.oModel.sServiceUrl;
             var oModel = oEvent.getModel();
@@ -15,7 +15,7 @@ sap.ui.define([
                     key = {key : key,status : "Approved" ,urll : window.location.href};
                     key = JSON.stringify(key);
                     oFunction.setParameter("ID",key);
-                    await oFunction.execute();debugger
+                    await oFunction.execute(); 
                     let oContext1 = oFunction.getBoundContext();
 						let result1 = oContext1.getObject();
                             result1 = JSON.parse(result1.value);
@@ -58,10 +58,10 @@ sap.ui.define([
                         //     Httpreq.open("GET", url);
                         //     Httpreq.send();
                         //     Httpreq.onreadystatechange = function (){
-                        //         debugger
+                        //          
                         //     } 
                         // } catch(error) {
-                        //     debugger
+                        //      
                         // }
                         
                              

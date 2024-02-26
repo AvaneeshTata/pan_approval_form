@@ -14,15 +14,15 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				var oModel = this.base.getExtensionAPI().getModel();
 			},
 			routing:{
-				onAfterBinding:async function(){debugger
+				onAfterBinding:async function(){ 
 					let sObj = {sorters : [{descending: false , name:"Property::slNo"}]}; 
 					await sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS').setSortConditions(sObj);
 
 					var frag4 = this.base.getView().getContent()[0]
-						frag4.attachSectionChange(function(){debugger
+						frag4.attachSectionChange(function(){ 
 							var section = this.getScrollingSectionId()
 							
-								debugger
+								 
 								// var val22 = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.getColumns()[1]	
 								// var firstcoulmn = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns[1]
 								// // var value232 = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0]

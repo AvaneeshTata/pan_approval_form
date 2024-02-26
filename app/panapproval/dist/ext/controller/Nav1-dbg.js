@@ -4,13 +4,13 @@ sap.ui.define([
     'use strict';
 
     return {
-        llink: async function (oEvent) {debugger
+        llink: async function (oEvent) { 
             var oModel = oEvent.getModel();
             var Name = 'cbe';
 					let oFunction = oModel.bindContext(`/${Name}(...)`);
                     var key = oEvent.sPath.match(/'([^']+)'/)?.[1];
                     oFunction.setParameter("ID",key);
-                    await oFunction.execute();debugger
+                    await oFunction.execute(); 
                     let oContext1 = oFunction.getBoundContext();
 						let result1 = oContext1.getObject();
                             result1 = JSON.parse(result1.value);
