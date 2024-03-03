@@ -5,7 +5,7 @@ sap.ui.define([
     'use strict';
     var oBusyDialog=new sap.m.BusyDialog();
     return {
-        Approve:async function(oEvent) { 
+        Approve:async function(oEvent) { debugger
             oBusyDialog.open();
             // var baseUrl = oEvent.oModel.sServiceUrl;
             var oModel = oEvent.getModel();
@@ -153,6 +153,12 @@ sap.ui.define([
             // });
             // window.history.back();
             oBusyDialog.close();
+            if(result1.status == "er")
+            alert("Sorry, we're experiencing technical difficulties. Please try again later.");
+        else{
+        sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(false);
+        sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FormContainer::ApprovalComments::FormElement::DataField::Comments::Field-edit').setEnabled(false)
+    }
             var href_For_Product_display = await sap.ushell.Container.getServiceAsync("Navigation");
 										
 								href_For_Product_display.navigate({
@@ -160,9 +166,9 @@ sap.ui.define([
 								});
 
             // window.location.href = previousPageUrl;
-            
+            if(result1.status != "er"){
             MessageToast.show("PAN Form has been Approved.");
-        
+        }
         }
     };
 });

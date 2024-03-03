@@ -2,6 +2,9 @@
 .sapMListTbl{
 border : solid 0.5px;
 }
+.sapUiTableExt{
+    display: none;
+}
 .sapMTableTH{
     background-color: gainsboro;
 }

@@ -23,11 +23,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 				
 			},
 			onAfterRendering:async function(){ 
-				
+				// sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(true);
 			},
 			routing :  {
 				
 				onBeforeBinding: async function(oBindingContext){ 
+					
+
 					this.getView().setVisible(false);
 					// let func = function(){
 					// 	 
@@ -55,28 +57,28 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						this.getView().setVisible(true);
 
 						var frag4 = this.base.getView().getContent()[0]
-						function resize(id) { 
-						let subCol = sap.ui.getCore().byId(id).mAggregations.content.getContent().mAggregations.columns;
-					subCol.forEach(col =>{
-						let colName = col.mProperties.dataProperty;
-						var colHeader = col.getHeader();
-								var mLength = colHeader.length;	
-									let valuevendor = sap.ui.getCore().byId(id).mAggregations.content.getContent().mAggregations._content.mBindingInfos.rows.binding.oCache.getAllElements();
-									const maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
-							if(maxLength > mLength)
-							mLength = maxLength; 
-					const width = mLength * 8 + 20 + "px"; 
+					// 	function resize(id) { 
+					// 	let subCol = sap.ui.getCore().byId(id).mAggregations.content.getContent().mAggregations.columns;
+					// subCol.forEach(col =>{
+					// 	let colName = col.mProperties.dataProperty;
+					// 	var colHeader = col.getHeader();
+					// 			var mLength = colHeader.length;	
+					// 				let valuevendor = sap.ui.getCore().byId(id).mAggregations.content.getContent().mAggregations._content.mBindingInfos.rows.binding.oCache.getAllElements();
+					// 				const maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
+					// 		if(maxLength > mLength)
+					// 		mLength = maxLength; 
+					// const width = mLength * 8 + 20 + "px"; 
 
-					col.setWidth(width)
-								});	
-					}
+					// col.setWidth(width)
+					// 			});	
+					// }
 					
 						frag4.attachSectionChange(function(){ 
 							var section = this.getScrollingSectionId()
-							if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
-								resize("__block1");
-								resize("__block2");
-							};
+							// if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
+							// 	resize("__block1");
+							// 	resize("__block2");
+							// };
 
 								 
 								var columns = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns;
@@ -97,8 +99,9 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 
 
 						var baseUrl = this.base.getAppComponent().getManifestObject()._oBaseUri._string;
+						//117 and 102
 						await $.ajax({
-						 url:baseUrl+ `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}`,
+						 url: baseUrl + `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}`,
 						 success: function(result) { 
 							 that.getView().getContent()[0].getFooter().setVisible(true);
 							 if(result.status == 'Approved' ||result.status == 'Rejected'||result.status == 'Justification Needed')
@@ -114,7 +117,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
  
  
 					   await $.ajax({
-						 url:baseUrl+`odata/v4/pan-approval/PAN_Details_APR/${res1[1]}/tab1toWORKFLOW_HISTORY`,
+						 url:baseUrl + `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}/tab1toWORKFLOW_HISTORY`,
 						 success: function(result) {
 							 // Code inside this function will execute after the AJAX call successfully completes
 							 console.log(result);
@@ -417,6 +420,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().setEditable(true);
 						 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().getFormContainers()[0].getFormElements()[0].getFields()[0].getContent().setEditMode('Editable');
 						 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().getFormContainers()[0].getFormElements()[0].getFields()[0].getContent().getContentEdit()[0].setEditable(true);
+						 sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(true);
 					 
 					 
 					   }

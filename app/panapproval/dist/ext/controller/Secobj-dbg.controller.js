@@ -15,6 +15,24 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			},
 			routing:{
 				onAfterBinding:async function(){ 
+					const url =location.href;
+const regex = /PAN_Number='([^']+)'/;
+const match = url.match(regex);
+const filter_Number = match ? match[1] : null;
+
+					let filter = {PAN_Number:[
+						{
+							"operator": "EQ",
+							"values": [
+								filter_Number
+							],
+							"validated": "NotValidated"
+						}
+					]};
+					sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtopd::LineItem::PRICEDETAILS').setFilterConditions(filter);
+					sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS').setFilterConditions(filter);
+					
+
 					let sObj = {sorters : [{descending: false , name:"Property::slNo"}]}; 
 					await sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS').setSortConditions(sObj);
 

@@ -250,11 +250,11 @@
                                             "press": "panapproval.ext.controller.Nav1.llink",
                                             "visible": true,
                                             "enabled": true,
-                                            "text": "CBE Compare",
                                             "position": {
                                                 "placement": "Before",
                                                 "anchor": "DeleteAction"
-                                            }
+                                            },
+                                            "text": "Comparative Statement"
                                         }
                                     }
                                 }
@@ -263,11 +263,45 @@
                                 "tab1totab2/@com.sap.vocabularies.UI.v1.LineItem#_": {
                                     "tableSettings": {
                                         "type": "GridTable"
+                                    },
+                                    "columns": {
+                                        "DataField::eventNo": {
+                                            "width": "250px"
+                                        },
+                                        "DataField::number": {
+                                            "width": "250px"
+                                        },
+                                        "DataField::date": {
+                                            "width": "150px"
+                                        },
+                                        "DataField::numberOfVendorsParticipated": {
+                                            "width": "250px"
+                                        },
+                                        "DataField::l1AmountObtained": {
+                                            "width": "200px"
+                                        }
                                     }
                                 },
                                 "tab1totab3/@com.sap.vocabularies.UI.v1.LineItem#PANTYPE": {
                                     "tableSettings": {
                                         "type": "GridTable"
+                                    },
+                                    "columns": {
+                                        "DataField::typeNo": {
+                                            "width": "200px"
+                                        },
+                                        "DataField::required": {
+                                            "width": "200px"
+                                        },
+                                        "DataField::submittedOn": {
+                                            "width": "200px"
+                                        },
+                                        "DataField::receivedOn": {
+                                            "width": "200px"
+                                        },
+                                        "DataField::timeTakenForApproval": {
+                                            "width": "200px"
+                                        }
                                     }
                                 },
                                 "tab1tovendor_data/@com.sap.vocabularies.UI.v1.LineItem#VendorData": {
