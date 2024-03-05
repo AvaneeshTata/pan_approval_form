@@ -283,6 +283,11 @@ annotate service.PAN_vendor_data_APR with @(
             $Type : 'UI.DataField',
             Value : Rank,
             Label : 'Rank',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Technically_Approved,
+            Label : 'Technically Approved',
         },]
 );
 annotate service.PAN_attachments_APR with @(
