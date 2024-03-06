@@ -87,6 +87,14 @@ modules:
         - npm run build:cf
       supported-platforms:
         []
+    requires:
+      - name: srv-api
+        group: destinations
+        properties:
+          name: pan_approval_form-srv
+          URL: {srv-api/srv-url}
+          HTML5.ForwardAuthToken: true
+          timeout: 180000
 resources:
   - name: pan_approval_form-destination-service
     type: org.cloudfoundry.managed-service
