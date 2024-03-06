@@ -81,8 +81,15 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 							await oFunction.execute(); 
 							let oContext1 = oFunction.getBoundContext();
 								let result1 = oContext1.getObject();
+
+								var statFilter =[{isEmpty:null,
+									operator:"EQ",
+									validated:"NotValidated",
+									values:['Pending for Approval']}];
+
+
 								var PAN_Number = JSON.parse(result1.value);
-									 var arr = {PAN_Number:PAN_Number};
+									 var arr = {PAN_Number:PAN_Number,status:statFilter};
 									 if(arr.PAN_Number.length == 0)
 									  arr.PAN_Number=[{isEmpty:null,
 													operator:"EQ",

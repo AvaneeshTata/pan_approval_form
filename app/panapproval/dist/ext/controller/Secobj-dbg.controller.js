@@ -63,7 +63,9 @@ const filter_Number = match ? match[1] : null;
 										mLength = maxLength; 
 								const width = mLength * 8 + 20 + "px"; 
    
-								col.setWidth(width)
+								col.setWidth(width);
+								sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS-innerTable').getColumns()[2].setWidth('350px')
+								sap.ui.getCore().byId('panapproval::PAN_Details_APR_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS-innerTable').getColumns()[4].setWidth('350px')
 											});	
 							
 						   });

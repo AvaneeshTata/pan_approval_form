@@ -1080,3 +1080,6 @@ annotate service.PAN_Details_APR with {
 annotate service.PAN_Details_APR with @(
     UI.Identification : []
 );
+annotate service.PAN_Details_APR with {
+    Comments @Common.FieldControl : #Mandatory
+};

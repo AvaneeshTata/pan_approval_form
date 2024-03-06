@@ -4,8 +4,26 @@ sap.ui.define([
 ], function(MessageToast) {
     'use strict';
     var oBusyDialog=new sap.m.BusyDialog();
+    var cont = new sap.m.Text({ text: "   Comments are mandatory!" });
+    var errDialog =  new sap.m.Dialog({
+        // type: DialogType.Message,
+        icon:"sap-icon://error",
+        title: "Error",
+        // state: ValueState.Error,
+        content: cont,
+        beginButton: new sap.m.Button({
+            // type: ButtonType.Emphasized,
+            text: "OK",
+            press: function () {
+                errDialog.close();
+            }.bind(this)
+        })
+    });
     return {
         Approve:async function(oEvent) { debugger
+            
+			
+		
             oBusyDialog.open();
             // var baseUrl = oEvent.oModel.sServiceUrl;
             var oModel = oEvent.getModel();
@@ -20,6 +38,13 @@ sap.ui.define([
 						let result1 = oContext1.getObject();
                             result1 = JSON.parse(result1.value);
 
+
+if(result1.status == 'mandt'){
+    oBusyDialog.close();
+    errDialog.open();
+    
+    return "errr";
+}
 
                             // let bod = JSON.stringify({
                             //     "actionableType": "Task",

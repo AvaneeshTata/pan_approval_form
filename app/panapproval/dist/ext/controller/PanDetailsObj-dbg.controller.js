@@ -102,6 +102,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 						//117 and 102
 						await $.ajax({
 						 url: baseUrl + `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}`,
+						//  url: `/odata/v4/pan-approval/PAN_Details_APR/${res1[1]}`,
 						 success: function(result) { 
 							 that.getView().getContent()[0].getFooter().setVisible(true);
 							 if(result.status == 'Approved' ||result.status == 'Rejected'||result.status == 'Justification Needed')
@@ -118,6 +119,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
  
 					   await $.ajax({
 						 url:baseUrl + `odata/v4/pan-approval/PAN_Details_APR/${res1[1]}/tab1toWORKFLOW_HISTORY`,
+						//  url:`/odata/v4/pan-approval/PAN_Details_APR/${res1[1]}/tab1toWORKFLOW_HISTORY`,
 						 success: function(result) {
 							 // Code inside this function will execute after the AJAX call successfully completes
 							 console.log(result);
@@ -146,7 +148,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								 "Begin_Date/_Time" : element.Begin_DateAND_Time,
 								 "End_Date/_Time" : element.End_DateAND_Time,
 								 Days_Taken : element.Days_Taken,
-								 Approved_by : element.Approved_by,
+								 Status : element.result,
+								 By_User : element.Approved_by,
 							 });
 						 });
  
@@ -420,6 +423,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().setEditable(true);
 						 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().getFormContainers()[0].getFormElements()[0].getFields()[0].getContent().setEditMode('Editable');
 						 this.getView().getContent()[0].mAggregations.sections[4].mAggregations._grid.getContent()[0].mAggregations._grid.getContent()[0].getContent().getContent().getFormContainers()[0].getFormElements()[0].getFields()[0].getContent().getContentEdit()[0].setEditable(true);
+						
 						 sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(true);
 					 
 					 
