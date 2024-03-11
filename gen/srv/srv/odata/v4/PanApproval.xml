@@ -144,7 +144,7 @@
         <Property Name="Destination_State_BKTShipDASHto_LocationBKT" Type="Edm.String"/>
         <Property Name="Vendor_GST_Number" Type="Edm.String"/>
         <Property Name="Vendor_CE_Score" Type="Edm.String"/>
-        <Property Name="Vendor_CE_Date" Type="Edm.String"/>
+        <Property Name="Vendor_CE_Date" Type="Edm.Date"/>
         <Property Name="Vendor_PE_Score" Type="Edm.String"/>
         <Property Name="Vendor_PE_Date" Type="Edm.String"/>
         <Property Name="Vendor_Contact_PersonDASH1" Type="Edm.String"/>
@@ -664,6 +664,18 @@
                         </Collection>
                       </PropertyValue>
                     </Record>
+                    <Record Type="UI.SelectOptionType">
+                      <PropertyValue Property="PropertyName" PropertyPath="status"/>
+                      <PropertyValue Property="Ranges">
+                        <Collection>
+                          <Record Type="UI.SelectionRangeType">
+                            <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                            <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/>
+                            <PropertyValue Property="Low" String="Pending for Approval"/>
+                          </Record>
+                        </Collection>
+                      </PropertyValue>
+                    </Record>
                   </Collection>
                 </PropertyValue>
               </Record>
@@ -742,6 +754,18 @@
                             <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
                             <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/>
                             <PropertyValue Property="Low" String=""/>
+                          </Record>
+                        </Collection>
+                      </PropertyValue>
+                    </Record>
+                    <Record Type="UI.SelectOptionType">
+                      <PropertyValue Property="PropertyName" PropertyPath="status"/>
+                      <PropertyValue Property="Ranges">
+                        <Collection>
+                          <Record Type="UI.SelectionRangeType">
+                            <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                            <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/EQ"/>
+                            <PropertyValue Property="Low" String="Pending for Approval"/>
                           </Record>
                         </Collection>
                       </PropertyValue>

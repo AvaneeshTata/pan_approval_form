@@ -1,11 +1,13 @@
 
+
+
 .sapMListTbl{
 border : solid 0.5px;
 }
 .sapUiTableExt{
     display: none;
 }
-.sapMTableTH{
+ .sapMTableTH{
     background-color: gainsboro;
 }
 /* plain theme */

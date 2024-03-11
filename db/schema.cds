@@ -169,7 +169,7 @@ Supplier_Origin_State : String;
 Destination_State_BKTShipDASHto_LocationBKT : String; 
 Vendor_GST_Number : String; 
 Vendor_CE_Score : String; 
-Vendor_CE_Date : String; 
+Vendor_CE_Date : Date; 
 Vendor_PE_Score : String; 
 Vendor_PE_Date : String; 
 Vendor_Contact_PersonDASH1 : String; 
@@ -303,7 +303,7 @@ key ptdkey:UUID;
 //    percentage_payment_for_progress : String;
 // percentage_payment_for_retention :String;
 
-   ptdtovend : Association to PAN_vendor_data on ptdtovend.Proposed_Vendor_Code=Proposed_Vendor_Code; 
+   ptdtovend : Association to PAN_vendor_data on ptdtovend.Proposed_Vendor_Code=Proposed_Vendor_Code and  PAN_Number = ptdtovend.PAN_Number; 
 //    PAYMENT_TERM_DETAILStotab1 :  Association to one tab1 on PAYMENT_TERM_DETAILStotab1.id = idd; 
 }
 
@@ -368,7 +368,7 @@ entity PAN_PRICE_DETAILS{
    Amount : String;
    Indian_Tax_PER : String;
    Quantity_Over_Delivery_Tolerance : String;
-   pdtovend : Association to PAN_vendor_data on pdtovend.Proposed_Vendor_Code = Proposed_Vendor_Code;
+   pdtovend : Association to PAN_vendor_data on pdtovend.Proposed_Vendor_Code = Proposed_Vendor_Code and  PAN_Number = pdtovend.PAN_Number;
 }
 
 

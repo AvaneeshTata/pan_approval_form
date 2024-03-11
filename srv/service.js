@@ -412,8 +412,10 @@ if (comm[0].Comments) {
         // let dummyRes = [];
         // let dummyRes = await AribaSrv.post('/sap/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet',body);
         try {
+            console.log(body);
             var dummyRes = await AribaSrv.post('/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet', body);//testing    
         } catch (error) {
+            console.log(error);
             let m = { status: "er" };
             return JSON.stringify(m);
         }

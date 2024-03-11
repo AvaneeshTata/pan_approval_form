@@ -1068,6 +1068,17 @@ annotate service.PAN_Details_APR with @(
                         },
                     ],
                 },
+                {
+                    $Type : 'UI.SelectOptionType',
+                    PropertyName : status,
+                    Ranges : [
+                        {
+                            Sign : #I,
+                            Option : #EQ,
+                            Low : 'Pending for Approval',
+                        },
+                    ],
+                },
                 ],
         },
     }
