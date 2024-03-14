@@ -545,14 +545,14 @@ if (comm[0].Comments) {
         // }
         // let panD = await SELECT.from(PAN_Details_APR).where`PAN_Number = req.data.ID`
         var status = "Pending for Approval";
-if(buttonClicked == "Justification Needed" || buttonClicked == "Rejected"){
+if(buttonClicked == "Justification Needed"){
     await UPDATE(PAN_Details_APR, req.data.ID).with({
         "status": buttonClicked,
         "Comments": null
     })
 }
 else{
-    if (data_m.Current_level_of_approval == data_m.total_levels_of_approval )
+    if (data_m.Current_level_of_approval == data_m.total_levels_of_approval  || buttonClicked == "Rejected")
     status = buttonClicked;
 await UPDATE(PAN_Details_APR, req.data.ID).with({
         "status": status,
