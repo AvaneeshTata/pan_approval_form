@@ -545,7 +545,7 @@ if (comm[0].Comments) {
         // }
         // let panD = await SELECT.from(PAN_Details_APR).where`PAN_Number = req.data.ID`
         var status = "Pending for Approval";
-if(buttonClicked == "Justification Needed"){
+if(buttonClicked == "Justification Needed" || buttonClicked == "Rejected"){
     await UPDATE(PAN_Details_APR, req.data.ID).with({
         "status": buttonClicked,
         "Comments": null

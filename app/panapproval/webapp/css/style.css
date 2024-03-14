@@ -162,6 +162,7 @@ background-color: #FAD6A5;
 .sapMEmptyIndicator{
     visibility: hidden ;
 }
+.css1,
 #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row0-col4 .sapUiTableCellInner,
 #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row1-col4 .sapUiTableCellInner,
 #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row2-col4 .sapUiTableCellInner,
@@ -177,6 +178,7 @@ background-color: #FAD6A5;
   
   }
    /* panappbeta::tab1_tab1tovendor_dataObjectPage--fe::table::vendtoptd::LineItem::PAYMENT_TERM_DETAILS-innerTable_col4 */
+   .css2:hover span,
    #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row0-col4 .sapUiTableCellInner:hover span,
    #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row1-col4 .sapUiTableCellInner:hover span,
    #panapproval\:\:PAN_Details_APR_tab1tovendor_dataObjectPage--fe\:\:table\:\:vendtoptd\:\:LineItem\:\:PAYMENT_TERM_DETAILS-innerTable-rows-row2-col4 .sapUiTableCellInner:hover span,

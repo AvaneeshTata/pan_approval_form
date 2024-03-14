@@ -73,7 +73,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					// 			});	
 					// }
 					
-						frag4.attachSectionChange(function(){ 
+						frag4.attachSectionChange(function(){ debugger
 							var section = this.getScrollingSectionId()
 							// if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
 							// 	resize("__block1");
@@ -84,12 +84,16 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								var columns = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns;
 								if(columns != undefined )
 								columns.forEach(col =>{
+									let colheader = col.mProperties.header;
 									let colName = col.mProperties.dataProperty;
-									let mLength = colName.length;
+									let mLength = colheader.length;
 												let valuevendor = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations._content.mBindingInfos.rows.binding.oCache.getValue()
-												const maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
-										if(maxLength > mLength)
-										mLength = maxLength; 
+												let maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
+												if(maxLength > mLength){
+													// if(maxLength > 50)
+													// 	maxLength = 50
+													mLength = maxLength; 
+												}
 								const width = mLength * 8 + 20 + "px"; 
    
 								col.setWidth(width)
@@ -148,7 +152,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								 "Begin_Date/_Time" : element.Begin_DateAND_Time,
 								 "End_Date/_Time" : element.End_DateAND_Time,
 								 Days_Taken : element.Days_Taken,
-								 Status : element.result,
+								 Status : element.Result,
 								 By_User : element.Approved_by,
 							 });
 						 });

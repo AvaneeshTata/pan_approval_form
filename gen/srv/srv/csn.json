@@ -429,7 +429,7 @@
           "type": "cds.String"
         },
         "Vendor_CE_Date": {
-          "type": "cds.Date"
+          "type": "cds.String"
         },
         "Vendor_PE_Score": {
           "type": "cds.String"
@@ -1741,7 +1741,7 @@
           "type": "cds.String"
         },
         "Vendor_CE_Date": {
-          "type": "cds.Date"
+          "type": "cds.String"
         },
         "Vendor_PE_Score": {
           "type": "cds.String"
@@ -3546,13 +3546,6 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "Vendor_Location"
-          },
-          "Label": "Awarded Vendor"
-        },
-        {
-          "$Type": "UI.DataField",
-          "Value": {
             "=": "Client_Approved"
           },
           "Label": "Client Approved"
@@ -3595,16 +3588,23 @@
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "Rank"
+            "=": "Technically_Approved"
           },
-          "Label": "Rank"
+          "Label": "Technically Approved"
         },
         {
           "$Type": "UI.DataField",
           "Value": {
-            "=": "Technically_Approved"
+            "=": "Vendor_Location"
           },
-          "Label": "Technically Approved"
+          "Label": "Technical Rank / Remarks"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
+            "=": "Rank"
+          },
+          "Label": "Rank"
         }
       ],
       "@UI.Facets": [
@@ -4031,7 +4031,7 @@
           "@Common.FieldControl": {
             "#": "ReadOnly"
           },
-          "type": "cds.Date"
+          "type": "cds.String"
         },
         "Vendor_PE_Score": {
           "@Common.FieldControl": {

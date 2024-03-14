@@ -221,7 +221,7 @@ sap.ui.define([
             // });
             // window.history.back();
             oBusyDialog.close();
-            if (result1.status == "er")
+            if (result1.status == "er") 
                 alert("Sorry, we're experiencing technical difficulties. Please try again later.");
             else {
                 sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(false);

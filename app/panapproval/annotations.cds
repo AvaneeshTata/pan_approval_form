@@ -246,11 +246,6 @@ annotate service.PAN_vendor_data_APR with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : Vendor_Location,
-            Label : 'Awarded Vendor',
-        },
-        {
-            $Type : 'UI.DataField',
             Value : Client_Approved,
             Label : 'Client Approved',
         },
@@ -281,13 +276,18 @@ annotate service.PAN_vendor_data_APR with @(
         },
         {
             $Type : 'UI.DataField',
-            Value : Rank,
-            Label : 'Rank',
+            Value : Technically_Approved,
+            Label : 'Technically Approved',
         },
         {
             $Type : 'UI.DataField',
-            Value : Technically_Approved,
-            Label : 'Technically Approved',
+            Value : Vendor_Location,
+            Label : 'Technical Rank / Remarks',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Rank,
+            Label : 'Rank',
         },]
 );
 annotate service.PAN_attachments_APR with @(
