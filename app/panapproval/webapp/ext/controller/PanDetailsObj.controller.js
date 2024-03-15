@@ -101,9 +101,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 								// // col.setWidth(width)
 								// 			});	
 											// sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows()[0].getCells()[9].addStyleClass("css1");
-											sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows().forEach( row =>{
-												row.getCells()[9].addStyleClass("css1");
-												row.getCells()[1].addStyleClass("css1");
+											
+											sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows().forEach( async row =>{
+												await	row.getCells()[9].removeStyleClass("css1");
+												await 	row.getCells()[1].removeStyleClass("css1");	
+											 await	row.getCells()[9].addStyleClass("css1");
+											await 	row.getCells()[1].addStyleClass("css1");
+												
 											})
 							
 										});
@@ -444,6 +448,11 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					else{
 
 						alert("You are Unauthorized to access this site!!");
+
+						// await sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows().forEach( row =>{
+						// 	row.getCells()[9].addStyleClass("css1");
+						// 	row.getCells()[1].addStyleClass("css1");
+						// })
 					
 				}
 				},
