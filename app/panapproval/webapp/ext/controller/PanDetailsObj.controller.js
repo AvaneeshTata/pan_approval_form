@@ -22,12 +22,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			onBeforeRendering:async function(){ 
 				
 			},
-			onAfterRendering:async function(){ 
+			onAfterRendering:async function(){ debugger
 				// sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(true);
+				 
 			},
 			routing :  {
 				
-				onBeforeBinding: async function(oBindingContext){ 
+				onBeforeBinding: async function(oBindingContext){ debugger
 					
 
 					this.getView().setVisible(false);
@@ -74,6 +75,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					// }
 					
 						frag4.attachSectionChange(function(){ debugger
+
 							var section = this.getScrollingSectionId()
 							// if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
 							// 	resize("__block1");
@@ -81,25 +83,30 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 							// };
 
 								 
-								var columns = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns;
-								if(columns != undefined )
-								columns.forEach(col =>{
-									let colheader = col.mProperties.header;
-									let colName = col.mProperties.dataProperty;
-									let mLength = colheader.length;
-												let valuevendor = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations._content.mBindingInfos.rows.binding.oCache.getValue()
-												let maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
-												if(maxLength > mLength){
-													// if(maxLength > 50)
-													// 	maxLength = 50
-													mLength = maxLength; 
-												}
-								const width = mLength * 8 + 20 + "px"; 
-   
-								col.setWidth(width)
-											});	
+								// var columns = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations.columns;
+								// if(columns != undefined )
+								//  columns.forEach(col =>{
+								// 	let colheader = col.mProperties.header;
+								// 	let colName = col.mProperties.dataProperty;
+								// 	let mLength = colheader.length;
+								// 				let valuevendor = sap.ui.getCore().byId(`${section}`).mAggregations._grid.mAggregations.content[0].mAggregations._grid.mAggregations.content[0].mAggregations.content.mAggregations.content.mAggregations._content.mBindingInfos.rows.binding.oCache.getValue()
+								// 				let maxLength = Math.max(...valuevendor.map(item => (item[colName]?.length ?? 8)));
+								// 				if(maxLength > mLength){
+								// 					if(maxLength > 50)
+								// 						maxLength = 50
+								// 					mLength = maxLength; 
+								// 				}
+								// const width = mLength * 8 + 20 + "px"; 
+								// 				// if(colName != "Vendor_Location")
+								// // col.setWidth(width)
+								// 			});	
+											// sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows()[0].getCells()[9].addStyleClass("css1");
+											sap.ui.getCore().byId("panapproval::PAN_Details_APRObjectPage--fe::table::tab1tovendor_data::LineItem::VendorData").mAggregations._content.getRows().forEach( row =>{
+												row.getCells()[9].addStyleClass("css1");
+												row.getCells()[1].addStyleClass("css1");
+											})
 							
-						   });
+										});
 
 
 						var baseUrl = this.base.getAppComponent().getManifestObject()._oBaseUri._string;
@@ -440,8 +447,8 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					
 				}
 				},
-				onAfterBinding : function(oBindingContext) {
-					 
+				onAfterBinding : async function(oBindingContext) {debugger
+					
 					var pan_numb = oBindingContext.oBinding.sPath;
 					const pattern = /'([^']+)'/;
 					const matches = pan_numb.match(pattern);

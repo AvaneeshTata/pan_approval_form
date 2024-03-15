@@ -429,7 +429,7 @@
           "type": "cds.String"
         },
         "Vendor_CE_Date": {
-          "type": "cds.String"
+          "type": "cds.Date"
         },
         "Vendor_PE_Score": {
           "type": "cds.String"
@@ -1741,7 +1741,7 @@
           "type": "cds.String"
         },
         "Vendor_CE_Date": {
-          "type": "cds.String"
+          "type": "cds.Date"
         },
         "Vendor_PE_Score": {
           "type": "cds.String"
@@ -4031,7 +4031,7 @@
           "@Common.FieldControl": {
             "#": "ReadOnly"
           },
-          "type": "cds.String"
+          "type": "cds.Date"
         },
         "Vendor_PE_Score": {
           "@Common.FieldControl": {
