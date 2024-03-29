@@ -21,7 +21,7 @@
         "headers": {
           "url": "https://openapi.ariba.com/api/sourcing-approval/v2/prod/action",
           "query": "",
-          "basis": "Basic MWE4ZWQwOWQtYzdjYy00OWQyLWJhM2EtNzAyMTI0N2Q0YTYyOndvNnJmb2xxNEJmdjBlTGxCYW9jdDcxTkZ5dWFZcnZv"
+          "basis": "Basic ZDdjNThhNGMtYTVlMy00M2E2LThmMDQtYjgzMTViNDM2MTdjOnpTeFUxTm9UQ1I1OFNnR25MTmF5bXdsSjlmeGVWanpS"
         }
       }
     }
