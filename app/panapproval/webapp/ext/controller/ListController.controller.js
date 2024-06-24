@@ -74,7 +74,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 		
 			routing:{
 			
-				onAfterBinding:async function(oEvent){ 
+				onAfterBinding:async function(oEvent){ debugger
 					var oModel = this.base.getExtensionAPI().getModel();
 					var Name = 'filteredData';
 							let oFunction = oModel.bindContext(`/${Name}(...)`);

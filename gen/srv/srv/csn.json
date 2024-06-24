@@ -2666,6 +2666,13 @@
         {
           "$Type": "UI.DataField",
           "Value": {
+            "=": "Project_Description"
+          },
+          "Label": "PAN Description"
+        },
+        {
+          "$Type": "UI.DataField",
+          "Value": {
             "=": "Plant_Code"
           },
           "Label": "Plant Code"

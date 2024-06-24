@@ -33,7 +33,9 @@ module.exports = cds.service.impl(async function () {
         console.log("beforevalidate");
 
         // let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
-        let dummyRes = await AribaSrv.get(`/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);//testing
+        let url = `/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`
+        console.log(url);
+        let dummyRes = await AribaSrv.get(url);//testing
         //    let dummyRes = [{status : "User Found",user : "one"}];
         console.log("validate");
         console.log(dummyRes[0]);
@@ -474,7 +476,7 @@ if (comm[0].Comments) {
             console.log(task_id[0].task_id);
             // ariba.destination.headers.body = JSON.stringify();
             //   ariba.destination.headers.query = "realm=tataprojects-T&user=" + decoded["user_name"] + "&passwordadapter=ThirdPartyUser&apikey=nQcLVavnQ7f2YklQoRtNeVgYFGyyqN4v" 
-            ariba.destination.headers.query = "realm=tataprojects-T&user=" + "PANCreator" + "&passwordadapter=ThirdPartyUser&apikey=nQcLVavnQ7f2YklQoRtNeVgYFGyyqN4v";
+            ariba.destination.headers.query = "realm=tataprojects-T&user=" + "PANCreator" + "&passwordadapter=ThirdPartyUser&apikey=fLS7WPgEo9MSizO0WUehB8YCmdr0wCYx";
             if (task_id[0].task_id) {
                 try {
                     // console.log("avaneesh post");

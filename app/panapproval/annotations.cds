@@ -20,6 +20,11 @@ annotate service.PAN_Details_APR with @(
             $Type : 'UI.DataField',
             Value : BUORPurchasing_Group,
             Label : 'BU/Purchasing Group',
+        },
+        {
+            $Type : 'UI.DataField',
+            Value : Project_Description,
+            Label : 'PAN Description',
         },{
             $Type : 'UI.DataField',
             Value : Plant_Code,
