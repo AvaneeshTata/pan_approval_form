@@ -13,6 +13,7 @@
         "@sap/xsenv": "4.2.0",
         "@sap/xssec": "3.6.1",
         "ajax": "^0.0.4",
+        "axios": "^1.7.2",
         "express": "^4",
         "jquery": "^3.7.1",
         "jsdom": "^24.0.0",
@@ -48,7 +49,7 @@
                 "csrfInBatch": true,
                 "credentials": {
                     "destination": "TEST_DEST",
-                    "requestTimeout": 120000
+                    "requestTimeout": 180000
                 },
                 "destinationOptions": {
                     "selectionStrategy": "alwaysProvider",

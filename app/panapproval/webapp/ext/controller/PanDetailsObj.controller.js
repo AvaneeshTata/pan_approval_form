@@ -445,7 +445,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					   }
 					       
 
-					else{
+					else {
 
 						alert("You are Unauthorized to access this site!!");
 

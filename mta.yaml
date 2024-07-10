@@ -116,6 +116,7 @@ resources:
                 ProxyType: Internet
                 Type: HTTP
                 URL: ~{srv-api/srv-url}
+                HTML5.Timeout: 180000
             existing_destinations_policy: update
         version: 1.0.0
       service: destination

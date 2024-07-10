@@ -3,6 +3,7 @@ const { Readable } = require('stream')
 const { jwtDecode } = require('jwt-decode')
 const { ajax } = require('ajax');
 const { json } = require('stream/consumers');
+const {  axios } = require('axios');
 module.exports = cds.service.impl(async function () {
     let {
         attachments, tab1, tab2, tab3, vendor_data, Fvendor_responseoo, PAYMENT_TERM_DETAILS, WORKFLOW_HISTORY, WORKFLOW_HISTORY_EMP, PAN_PRICE_DETAILS, PAN_Payment_Method_Drop, PAN_Comments,
@@ -31,14 +32,17 @@ module.exports = cds.service.impl(async function () {
         }
         let wiid = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`;
         console.log("beforevalidate");
-
+        // let wiid2 = await SELECT.from(tab1).where`PAN_Number = ${req.data.ID}`;
         // let dummyRes = await AribaSrv.get(`/sap/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`);
         let url = `/opu/odata/sap/ZARB_BTP_ATTACHMENT_SRV/wiidByUserSet?$filter=( user eq  '${decoded["user_name"]}'  and wiid eq '${wiid[0].Sap_workitem_id}' )`
         console.log(url);
+        
         let dummyRes = await AribaSrv.get(url);//testing
         //    let dummyRes = [{status : "User Found",user : "one"}];
         console.log("validate");
         console.log(dummyRes[0]);
+        // if(wiid2[0].status == 'Editing')
+        // dummyRes[0].user = 'Editing';
         return JSON.stringify(dummyRes[0]);
 
     });
@@ -353,17 +357,7 @@ module.exports = cds.service.impl(async function () {
 
         // Convert milliseconds to minutes
         const differenceDays = Math.abs(Math.floor(differenceMs / (1000 * 60 * 60 * 24)));
-        console.log("update dates");
-        if (buttonClicked != 'Justification Needed')
-            startDate.forEach(async data => {
-                let res = await UPDATE(PAN_WORKFLOW_HISTORY_APR, { PAN_Number: req.data.ID, idd: data.idd, level: data_m.Current_level_of_approval }).with({
-                    "Result": buttonClicked,
-                    "End_DateAND_Time": currentDate,
-                    "Days_Taken": differenceDays.toString(),
-                    "Approved_by": decoded["user_name"]
-                });
-                console.log(res);
-            });
+
 ////////comments updated
 
 let comm = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`
@@ -378,7 +372,13 @@ if (comm[0].Comments) {
     };
     //  commentss = comm[0].Comments;
     await INSERT.into(PAN_Comments_APR).entries(ComEnt);
+    await UPDATE(PAN_Details_APR,req.data.ID).with({
+        "Comments":""
+     });
+    //  await cds.tx(req).commit();
 }
+
+
 
 
 
@@ -415,12 +415,26 @@ if (comm[0].Comments) {
         // let dummyRes = await AribaSrv.post('/sap/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet',body);
         try {
             console.log(body);
-            var dummyRes = await AribaSrv.post('/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet', body);//testing    
+            // console.log(body);
+            var dummyRes = await AribaSrv.post('/opu/odata/sap/ZARB_BTP_GENERATEFORM_SRV/formSet', body);//;//testing    
         } catch (error) {
             console.log(error);
-            let m = { status: "er" };
-            return JSON.stringify(m);
+            // let m = { status: "er" };
+            return JSON.stringify(error);
         }
+
+        console.log("update dates");
+if (buttonClicked != 'Justification Needed'){
+    startDate.forEach(async data => {
+        let res = await UPDATE(PAN_WORKFLOW_HISTORY_APR, { PAN_Number: req.data.ID, idd: data.idd, level: data_m.Current_level_of_approval }).with({
+            "Result": buttonClicked,
+            "End_DateAND_Time": currentDate,
+            "Days_Taken": differenceDays.toString(),
+            "Approved_by": decoded["user_name"]
+        });
+        console.log(res);
+    });
+}
 
 
         console.log(dummyRes);
