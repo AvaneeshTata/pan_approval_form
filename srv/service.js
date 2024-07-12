@@ -10,7 +10,13 @@ module.exports = cds.service.impl(async function () {
         PAN_Details_APR, PAN_WEB_EVENT_APR, PAN_TYPE_APR, PAN_vendor_data_APR, PAN_vendor_response_APR, PAN_PAYMENT_TERM_DETAILS_APR, PAN_PRICE_DETAILS_APR, PAN_WORKFLOW_HISTORY_APR, PAN_attachments_APR, PAN_Payment_Method_Drop_APR, PAN_Comments_APR
     } = this.entities;
     const AribaSrv = await cds.connect.to('ARIBA_DEV');
-    const ariba = await cds.connect.to('getcall');
+    var space = process.env.tenant_space;
+    // var space = "production";
+  //  var space ="dev/uat"
+    console.log(space);
+  
+//   const getcall = await cds.connect.to(space);
+    const ariba = await cds.connect.to(space);
 
     this.on("cbe", async (req) => {
         let data = await SELECT.from(PAN_Details_APR).where`PAN_Number = ${req.data.ID}`;
@@ -489,14 +495,20 @@ if (buttonClicked != 'Justification Needed'){
             console.log(body);
             console.log(task_id[0].task_id);
             // ariba.destination.headers.body = JSON.stringify();
-            //   ariba.destination.headers.query = "realm=tataprojects-T&user=" + decoded["user_name"] + "&passwordadapter=ThirdPartyUser&apikey=nQcLVavnQ7f2YklQoRtNeVgYFGyyqN4v" 
+            if(space === 'dev/uat'){
+              ariba.destination.headers.query = "realm=tataprojects-T&user=" + decoded["user_name"] + "&passwordadapter=ThirdPartyUser&apikey=nQcLVavnQ7f2YklQoRtNeVgYFGyyqN4v" 
+            }
+            else if(space === 'production'){
             ariba.destination.headers.query = "realm=tataprojects-T&user=" + "PANCreator" + "&passwordadapter=ThirdPartyUser&apikey=fLS7WPgEo9MSizO0WUehB8YCmdr0wCYx";
+            }
             if (task_id[0].task_id) {
                 try {
-                    // console.log("avaneesh post");
-                    let res = await ariba.post("/http/postcallscript",body);
+                    console.log("avaneesh post");
+                    let res = await ariba.post("/postcallscript",body);
+                    console.log(res);
                 } catch (err) {
                     console.log(err);
+                    return JSON.stringify(err);
                 }
             }
 
