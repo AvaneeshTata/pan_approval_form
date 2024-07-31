@@ -19,6 +19,12 @@ function sendforapproval(data:String) returns LargeString;
  function getData(ID:String) returns String;
  function switch_control(ID:String) returns String;
  function getuserinfo(ID:String) returns String;
+function getcomments(ID:String) returns String;
+function getsync(data:String) returns String;
+function draft(ID:String) returns String;
+function Listdata(ID:String) returns String;
+function flag (ID:String,case:String) returns String;
+function updatee(ID:String) returns String;
 }
 service PanApproval {
  entity PAN_Details_APR as projection on my.PAN_Details;
@@ -37,9 +43,9 @@ service PanApproval {
  function InsertData(ID:String) returns String;
  function finalApprove(data:String) returns String;
  function getData(ID:String) returns String;
- function switch_control(ID:String) returns String;
+ function switch_control() returns String;
  function getuser(ID:String) returns String;
- function Reject(data:String) returns String;
+ function Reject(ID:String) returns String;
  function getcomments(ID:String) returns String;
  function filteredData() returns LargeString;
  function validateUser(ID:String) returns String;

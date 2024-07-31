@@ -367,7 +367,6 @@
         <ReturnType Type="Edm.String"/>
       </Function>
       <Function Name="switch_control" IsBound="false" IsComposable="false">
-        <Parameter Name="ID" Type="Edm.String"/>
         <ReturnType Type="Edm.String"/>
       </Function>
       <Function Name="getuser" IsBound="false" IsComposable="false">
@@ -375,7 +374,7 @@
         <ReturnType Type="Edm.String"/>
       </Function>
       <Function Name="Reject" IsBound="false" IsComposable="false">
-        <Parameter Name="data" Type="Edm.String"/>
+        <Parameter Name="ID" Type="Edm.String"/>
         <ReturnType Type="Edm.String"/>
       </Function>
       <Function Name="getcomments" IsBound="false" IsComposable="false">

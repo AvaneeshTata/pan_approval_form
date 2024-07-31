@@ -41,6 +41,12 @@
         <FunctionImport Name="getData" Function="CatalogService.getData"/>
         <FunctionImport Name="switch_control" Function="CatalogService.switch_control"/>
         <FunctionImport Name="getuserinfo" Function="CatalogService.getuserinfo"/>
+        <FunctionImport Name="getcomments" Function="CatalogService.getcomments"/>
+        <FunctionImport Name="getsync" Function="CatalogService.getsync"/>
+        <FunctionImport Name="draft" Function="CatalogService.draft"/>
+        <FunctionImport Name="Listdata" Function="CatalogService.Listdata"/>
+        <FunctionImport Name="flag" Function="CatalogService.flag"/>
+        <FunctionImport Name="updatee" Function="CatalogService.updatee"/>
       </EntityContainer>
       <EntityType Name="tab1">
         <Key>
@@ -476,6 +482,31 @@
         <ReturnType Type="Edm.String"/>
       </Function>
       <Function Name="getuserinfo" IsBound="false" IsComposable="false">
+        <Parameter Name="ID" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="getcomments" IsBound="false" IsComposable="false">
+        <Parameter Name="ID" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="getsync" IsBound="false" IsComposable="false">
+        <Parameter Name="data" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="draft" IsBound="false" IsComposable="false">
+        <Parameter Name="ID" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="Listdata" IsBound="false" IsComposable="false">
+        <Parameter Name="ID" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="flag" IsBound="false" IsComposable="false">
+        <Parameter Name="ID" Type="Edm.String"/>
+        <Parameter Name="case" Type="Edm.String"/>
+        <ReturnType Type="Edm.String"/>
+      </Function>
+      <Function Name="updatee" IsBound="false" IsComposable="false">
         <Parameter Name="ID" Type="Edm.String"/>
         <ReturnType Type="Edm.String"/>
       </Function>

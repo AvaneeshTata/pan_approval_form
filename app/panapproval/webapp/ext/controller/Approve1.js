@@ -72,13 +72,17 @@ sap.ui.define([
             // var baseUrl = oEvent.oModel.sServiceUrl;
             var oModel = oEvent.getModel();
             var Name = 'getuser';
-            let oFunction = oModel.bindContext(`/${Name}(...)`);
+            var oname= 'Reject'
+            let oFunction = oModel.bindContext(`/${oname}(...)`);
             var key = oEvent.sPath.match(/'([^']+)'/)?.[1];
             key = { key: key, status: "Approved", urll: window.location.href };
             key = JSON.stringify(key);
             oFunction.setParameter("ID", key);
             await oFunction.execute();
-            let oContext1 = oFunction.getBoundContext();
+            let Function = oModel.bindContext(`/${Name}(...)`);
+            Function.setParameter("ID", key);
+            await Function.execute();
+            let oContext1 = Function.getBoundContext();
             let result1 = oContext1.getObject();
             result1 = JSON.parse(result1.value);
 

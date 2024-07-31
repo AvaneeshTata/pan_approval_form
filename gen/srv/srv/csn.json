@@ -2626,6 +2626,75 @@
         "type": "cds.String"
       }
     },
+    "CatalogService.getcomments": {
+      "kind": "function",
+      "params": {
+        "ID": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "CatalogService.getsync": {
+      "kind": "function",
+      "params": {
+        "data": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "CatalogService.draft": {
+      "kind": "function",
+      "params": {
+        "ID": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "CatalogService.Listdata": {
+      "kind": "function",
+      "params": {
+        "ID": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "CatalogService.flag": {
+      "kind": "function",
+      "params": {
+        "ID": {
+          "type": "cds.String"
+        },
+        "case": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
+    "CatalogService.updatee": {
+      "kind": "function",
+      "params": {
+        "ID": {
+          "type": "cds.String"
+        }
+      },
+      "returns": {
+        "type": "cds.String"
+      }
+    },
     "PanApproval": {
       "@source": "srv/service.cds",
       "kind": "service"
@@ -5389,11 +5458,6 @@
     },
     "PanApproval.switch_control": {
       "kind": "function",
-      "params": {
-        "ID": {
-          "type": "cds.String"
-        }
-      },
       "returns": {
         "type": "cds.String"
       }
@@ -5412,7 +5476,7 @@
     "PanApproval.Reject": {
       "kind": "function",
       "params": {
-        "data": {
+        "ID": {
           "type": "cds.String"
         }
       },
