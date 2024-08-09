@@ -1,5 +1,7 @@
 using { proj_schema as my } from '../db/schema';
 
+
+//we are not using the catalog service in this application
 @requires: 'authenticated-user'
 service CatalogService {
     @odata.draft.enabled
@@ -26,6 +28,7 @@ function Listdata(ID:String) returns String;
 function flag (ID:String,case:String) returns String;
 function updatee(ID:String) returns String;
 }
+
 service PanApproval {
  entity PAN_Details_APR as projection on my.PAN_Details;
  entity PAN_WEB_EVENT_APR as projection on my.PAN_WEB_EVENT;
@@ -39,15 +42,26 @@ service PanApproval {
  entity PAN_Payment_Method_Drop_APR as projection on my.PAN_Payment_Method_Drop;
  entity PAN_Comments_APR as projection on my.PAN_Comments;
  entity vendorTaxDetails_APR as projection on my.vendorTaxDetails;
-  function sendforapproval(data:String) returns LargeString;
+ //below mentioned function import is not used on the Approval app.
+  function sendforapproval(data:String) returns LargeString;  
+   //below mentioned function import is not used on the Approval app.
  function InsertData(ID:String) returns String;
+  //below mentioned function import is not used on the Approval app.
  function finalApprove(data:String) returns String;
+  //below mentioned function import is not used on the Approval app.
  function getData(ID:String) returns String;
+ //below mentioned function import is used to trigger the odata url when the approval flow is failed to return the data in 3 mins and update the details in database
  function switch_control() returns String;
+ //below function import is used for the Approval flow to update the decision based action in BTP and S4.
  function getuser(ID:String) returns String;
+ //below mentioned function import is used to update the field as waiting for s4 reply while the Approver is performing the decision based action,
  function Reject(ID:String) returns String;
+ //below mentioned function import is used to get all the comments for specific pan and return in extension controller.
  function getcomments(ID:String) returns String;
+ //below function import gets all the workitem which are pending for the login user and return the same to UI to display all pending PAN.
  function filteredData() returns LargeString;
+ //it validates the login user against a pan from S4
  function validateUser(ID:String) returns String;
+ //returns all the PAN related data from the pan details table to the UI.
  function cbe(ID:String) returns String;
 }

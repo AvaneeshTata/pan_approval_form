@@ -36,7 +36,7 @@ sap.ui.define([
                         type: sap.m.ButtonType.Emphasized,
                         text: "OK",
                         press: function () {
-                            debugger
+                            
                             action = "action";
                             confirmDialog.close();
                             // confirmDialog.destroyContent();
@@ -47,7 +47,7 @@ sap.ui.define([
                         // type: ButtonType.Emphasized,
                         text: "Close",
                         press: function () {
-                            debugger
+                            
                             action = null;
                             confirmDialog.close();
                             // confirmDialog.destroyContent();

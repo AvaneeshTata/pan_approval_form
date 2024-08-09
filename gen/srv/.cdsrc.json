@@ -30,10 +30,10 @@
       "csrf": true,
       "csrfInBatch": true,
       "credentials": {
-        "url": "https://tpl-cpi-a0qwl4l9.it-cpi021-rt.cfapps.in30.hana.ondemand.com/http",
+        "url": "https://tpl-cpi-devqas-kjcrq0qf.it-cpi021-rt.cfapps.in30.hana.ondemand.com/http",
         "authentication": "BasicAuthentication",
-        "username":"sb-0b97c40d-3f35-4404-9105-b46caad5f19b!b5206|it-rt-tpl-cpi-a0qwl4l9!b148",
-        "password":"72ffaf31-45ac-47d4-b110-8a9f6295bd6f$5He2sa_sIzuf9H_hcPXuTLu-u1QmWkLktwS00qvrz48=",
+        "username":"sb-1c4958d6-c71f-4820-928f-3178df631a69!b7128|it-rt-tpl-cpi-devqas-kjcrq0qf!b148",
+        "password":"ff2a679f-d799-4644-9215-7dfe4173e74d$KKg7IjAzgseEu82Tm4sHLUP0XtAwazOBqPcfFKMy2KQ=",
         "headers": {
           "url": "https://openapi.ariba.com/api/sourcing-approval/v2/prod/action",
           "query": "",

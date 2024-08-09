@@ -74,7 +74,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 		
 			routing:{
 			
-				onAfterBinding:async function(oEvent){ debugger
+				onAfterBinding:async function(oEvent){ 
 					var oModel = this.base.getExtensionAPI().getModel();
 					var Name = 'filteredData';
 							let oFunction = oModel.bindContext(`/${Name}(...)`);
@@ -87,7 +87,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 									validated:"NotValidated",
 									values:['Pending for Approval']}];
 
-debugger
+
 								var PAN_Number = JSON.parse(result1.value);
 									 var arr = {PAN_Number:PAN_Number,status:statFilter};
 									 if(arr.PAN_Number.length == 0)

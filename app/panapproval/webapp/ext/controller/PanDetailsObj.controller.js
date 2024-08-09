@@ -1,4 +1,4 @@
-sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExtension) {
+sap.ui.define(['sap/ui/core/mvc/ControllerExtension',"sap/uxap/ObjectPageSubSection"], function (ControllerExtension,ObjectPageSubSection) {
 	'use strict';
 	var cdialog;
 	// var timeline = sap.suite.ui.commons.TimelineItem;
@@ -22,13 +22,13 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 			onBeforeRendering:async function(){ 
 				
 			},
-			onAfterRendering:async function(){ debugger
+			onAfterRendering:async function(){ 
 				// sap.ui.getCore().byId('panapproval::PAN_Details_APRObjectPage--fe::FooterBar').setEnabled(true);
 				 
 			},
 			routing :  {
 				
-				onBeforeBinding: async function(oBindingContext){ debugger
+				onBeforeBinding: async function(oBindingContext){ 
 					
 
 					this.getView().setVisible(false);
@@ -74,7 +74,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					// 			});	
 					// }
 					
-						frag4.attachSectionChange(function(){ debugger
+						frag4.attachSectionChange(function(){ 
 
 							var section = this.getScrollingSectionId()
 							// if(section == "panapproval::PAN_Details_APRObjectPage--fe::FacetSection::GeneralDetails1"){ 
@@ -201,7 +201,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
  
 					 oSection.destroySubSections();
  
-					 oSection.addSubSection(new sap.uxap.ObjectPageSubSection({
+					 oSection.addSubSection(new ObjectPageSubSection({
 						 // title: `Level ${levelArray[0].level}`
 					 }));
 					 let subSections = oSection.getSubSections();
@@ -343,7 +343,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					   }));
 					 
 					 target.forEach((levelArray) => {
-						 oScroll.addContent(new sap.uxap.ObjectPageSubSection({
+						 oScroll.addContent(new ObjectPageSubSection({
 							 // title: `Level ${levelArray[0].level}`
 						 }));
 						 let subSections = oScroll.getContent();
@@ -456,7 +456,7 @@ sap.ui.define(['sap/ui/core/mvc/ControllerExtension'], function (ControllerExten
 					
 				}
 				},
-				onAfterBinding : async function(oBindingContext) {debugger
+				onAfterBinding : async function(oBindingContext) {
 					
 					var pan_numb = oBindingContext.oBinding.sPath;
 					const pattern = /'([^']+)'/;
