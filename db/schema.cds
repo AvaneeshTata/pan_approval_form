@@ -6,7 +6,7 @@ using {
 
 @cds.persistance.exists
 entity PAN_Details{
-key PAN_Number : String default'def';
+key PAN_Number : String ;
 
 
 SBG : String;

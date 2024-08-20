@@ -53,7 +53,7 @@
           <PropertyRef Name="PAN_Number"/>
           <PropertyRef Name="IsActiveEntity"/>
         </Key>
-        <Property Name="PAN_Number" Type="Edm.String" Nullable="false" DefaultValue="def"/>
+        <Property Name="PAN_Number" Type="Edm.String" Nullable="false"/>
         <Property Name="SBG" Type="Edm.String"/>
         <Property Name="SBU" Type="Edm.String"/>
         <Property Name="BUORPurchasing_Group" Type="Edm.String"/>

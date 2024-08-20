@@ -7,10 +7,7 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String",
-          "default": {
-            "val": "def"
-          }
+          "type": "cds.String"
         },
         "SBG": {
           "type": "cds.String"
@@ -1298,10 +1295,7 @@
       "elements": {
         "PAN_Number": {
           "key": true,
-          "type": "cds.String",
-          "default": {
-            "val": "def"
-          }
+          "type": "cds.String"
         },
         "SBG": {
           "type": "cds.String"
@@ -3061,10 +3055,7 @@
             "#": "ReadOnly"
           },
           "key": true,
-          "type": "cds.String",
-          "default": {
-            "val": "def"
-          }
+          "type": "cds.String"
         },
         "SBG": {
           "@Common.FieldControl": {
